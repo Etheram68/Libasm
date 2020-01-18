@@ -6,7 +6,7 @@
 /*   By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/18 17:28:00 by frfrey       #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 17:55:22 by frfrey      ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 18:07:14 by frfrey      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,7 +17,7 @@
 
 int		main(void)
 {
-	printf("--strlen\n");
+	printf("%20%--strlen--%%\n");
 	printf("_ft_strlen = %d ", ft_strlen("Salut"));
 	printf("strlen = %ld\n", strlen("Salut"));
 	printf("\n-------------------\n");
@@ -32,5 +32,5 @@ int		main(void)
 	printf("\n-------------------\n");
 	printf("_ft_strlen = %d ", ft_strlen("Salut bro tu \0vas bien ?"));
 	printf("strlen = %ld\n", strlen("Salut bro tu \0vas bien ?"));
-	printf("--done--\n");
+	printf("%20%--done--%%\n");
 }
