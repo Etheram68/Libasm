@@ -6,7 +6,7 @@
 #    By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2020/01/14 14:47:39 by frfrey       #+#   ##    ##    #+#        #
-#    Updated: 2020/01/14 15:00:56 by frfrey      ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/18 17:42:06 by frfrey      ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -23,7 +23,7 @@ HEADER		=	$(addprefix $(HEAD_PATH)/,$(HEAD_NAME))
 
 SRC_PATH	=	sources
 
-SRCS_NAME	=	\
+SRCS_NAME	=	ft_strlen.s \
 
 SRC_BONUS	=	bonus
 
@@ -33,11 +33,11 @@ SRCS 		= 	$(addprefix $(SRC_PATH)/,$(SRCS_NAME))
 
 SRCB 		= 	$(addprefix $(SRC_BONUS)/,$(SRCS_BONUS))
 
-OBJS		= 	${SRCS:.s=.s}
+OBJS		= 	${SRCS:.s=.o}
 
-OBJSBONUS	=	${BONUS:.c=.s}
+OBJSBONUS	=	${BONUS:.s=.o}
 
-NAME		= 	libfts.a
+NAME		= 	libasm.a
 
 RM			= 	rm -f
 
@@ -50,15 +50,15 @@ FLAGS 		= 	-Wall -Wextra -Werror
 
 all:		LIBFT $(NAME)
 
-%.o: %.s 	$(HEADER)
+%.o: %.s
 			@echo "\033[0;32m[OK] \033[0m \033[0;33m Compiling:\033[0m" $<
-			@nasm $(FLAGS)  -c $< -s $@
+			@nasm -f macho64 -s $< -o $@
 
-$(NAME):	$(OBJS) $(HEADER)
+$(NAME):	$(OBJS)
 			@echo "\x1b[36m\n[OK] \033[0m \x1b[35m Compiling the library\033[0m"
 			@ar rcs $(NAME) $(OBJS)
 
-bonus:		$(OBJSBONUS) $(OBJS) $(HEADER)
+bonus:		$(OBJSBONUS) $(OBJS)
 			ar rcs $(NAME) $(OBJSBONUS) $(OBJS)
 
 clean:
