@@ -6,7 +6,7 @@
 #    By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2020/01/20 13:18:51 by frfrey       #+#   ##    ##    #+#        #
-#    Updated: 2020/01/20 13:23:18 by frfrey      ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/20 13:39:53 by frfrey      ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -14,7 +14,7 @@
 section .text
 		global _ft_write
 
-_ft_write:
-			mov rax, 0x2000004	; fd = rdi, buffer = rsi, bytes = rdx
-			syscall
-			ret
+_ft_write:							; fd = rdi, buffer = rsi, bytes = rdx
+			mov rax, 0x2000004		; write() syscall
+			syscall					; make the call
+			ret						; return Value bytes = rdx
