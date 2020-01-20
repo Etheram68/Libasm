@@ -6,7 +6,7 @@
 /*   By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/18 17:28:00 by frfrey       #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 13:36:14 by frfrey      ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 13:47:30 by frfrey      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,8 +35,8 @@ int		main(void)
 	printf("strlen = %ld\n", strlen("Salut bro tu \0vas bien ?"));
 	printf("%20%--done--%%\n\n");
 	printf("%20%--write--%%\n");
-	printf("_ft_write = %zd ", ft_write(1, "Salut\n", 6));
-	printf("write = %ld\n", write(1, "Salut\n", 6));
+	printf("_ft_write = %zd ", ft_write(42, "Salut\n", 6));
+	printf("write = %ld\n", write(42, "Salut\n", 6));
 	printf("\n-------------------\n");
 	printf("_ft_write = %zd ", ft_write(1, "", 1));
 	printf("write = %ld\n", write(1, "\n", 1));
