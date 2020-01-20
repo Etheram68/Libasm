@@ -6,7 +6,7 @@
 /*   By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/18 17:28:00 by frfrey       #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 18:07:14 by frfrey      ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 13:36:14 by frfrey      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -14,6 +14,7 @@
 #include "includes/libasm.h"
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
 int		main(void)
 {
@@ -32,5 +33,21 @@ int		main(void)
 	printf("\n-------------------\n");
 	printf("_ft_strlen = %d ", ft_strlen("Salut bro tu \0vas bien ?"));
 	printf("strlen = %ld\n", strlen("Salut bro tu \0vas bien ?"));
+	printf("%20%--done--%%\n\n");
+	printf("%20%--write--%%\n");
+	printf("_ft_write = %zd ", ft_write(1, "Salut\n", 6));
+	printf("write = %ld\n", write(1, "Salut\n", 6));
+	printf("\n-------------------\n");
+	printf("_ft_write = %zd ", ft_write(1, "", 1));
+	printf("write = %ld\n", write(1, "\n", 1));
+	printf("\n-------------------\n");
+	printf("_ft_write = %zd ", ft_write(1, "ieukthfiSUODLghISOLgdhkjvmsOLdg\n", 33));
+	printf("write = %ld\n", write(1, "ieukthfiSUODLghISOLgdhkjvmsOLdg\n", 33));
+	printf("\n-------------------\n");
+	printf("_ft_write = %zd ", ft_write(1, "Salut bro tu vas bien ?\n", 25));
+	printf("write = %ld\n", write(1, "Salut bro tu vas bien ?\n", 25));
+	printf("\n-------------------\n");
+	printf("_ft_write = %zd ", ft_write(1, "Salut bro tu \0vas bien ?\n", 26));
+	printf("write = %ld\n", write(1, "Salut bro tu \0vas bien ?\n", 26));
 	printf("%20%--done--%%\n");
 }

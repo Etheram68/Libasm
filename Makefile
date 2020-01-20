@@ -6,7 +6,7 @@
 #    By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2020/01/14 14:47:39 by frfrey       #+#   ##    ##    #+#        #
-#    Updated: 2020/01/18 18:30:42 by frfrey      ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/20 13:24:43 by frfrey      ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -23,7 +23,7 @@ HEADER		=	$(addprefix $(HEAD_PATH)/,$(HEAD_NAME))
 
 SRC_PATH	=	sources
 
-SRCS_NAME	=	ft_strlen.s \
+SRCS_NAME	=	ft_strlen.s ft_write.s \
 
 SRC_BONUS	=	bonus
 
