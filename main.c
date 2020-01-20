@@ -6,7 +6,7 @@
 /*   By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/18 17:28:00 by frfrey       #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 15:46:09 by frfrey      ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 16:47:17 by frfrey      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -77,7 +77,27 @@ int		main(void)
 	r = ft_read(fd, buffer, 0);
 	buffer[r] = 0;
 	printf("'%s':%ld\n", buffer, r);
-	printf("%20%--done--%%\n\n");
 	close(fd);
+	printf("%20%--done--%%\n\n");
+
+	printf("%20%--strcmp--%%\n");
+	printf("ft_strcmp = %d ", ft_strcmp("Salut", "Salut"));
+	printf("strcmp = %d\n", strcmp("Salut", "Salut"));
+	printf("\n-------------------\n");
+	printf("ft_strcmp = %d ", ft_strcmp("", ""));
+	printf("strcmp = %d\n", strcmp("", ""));
+	printf("\n-------------------\n");
+	printf("ft_strcmp = %d ", ft_strcmp("qwertjkl\n", "qwertyuiop\n"));
+	printf("strcmp = %d\n", strcmp("qwertjkl\n", "qwertyuiop\n"));
+	printf("\n-------------------\n");
+	printf("ft_strcmp = %d ", ft_strcmp("qwertyuiop\n", "qwerty\n"));
+	printf("strcmp = %d\n", strcmp("qwertyuiop\n", "qwerty\n"));
+	printf("\n-------------------\n");
+	printf("ft_strcmp = %d ", ft_strcmp("789\n", "987\n"));
+	printf("strcmp = %d\n", strcmp("789\n", "987\n"));
+	printf("\n-------------------\n");
+	printf("ft_strcmp = %d ", ft_strcmp("qwerty\0uiop\n", "qwerty\0uiop\n"));
+	printf("strcmp = %d\n", strcmp("qwerty\0uiop\n", "qwerty\0uiop\n"));
+	printf("%20%--done--%%\n\n");
 	return (0);
 }
