@@ -6,7 +6,7 @@
 #    By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2020/01/20 17:56:39 by frfrey       #+#   ##    ##    #+#        #
-#    Updated: 2020/01/20 18:29:26 by frfrey      ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/20 18:51:24 by frfrey      ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -23,8 +23,7 @@ _ft_strcpy_loop:
 				mov	[rdi + rcx], al			; dest[i] = c
 				inc	rcx						; i++
 				cmp	al, 0					; c == '\0' ?
-				je	end						; c == '\0' jump to end
-				jmp	_ft_strcpy_loop			; loop to _ft_strcpy_loop
+				jne	_ft_strcpy_loop			; c == '\0' loop to _ft_strcpy_loop
 
 end:
 				mov	rax, rdi				; mov dest in rax
