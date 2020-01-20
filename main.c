@@ -6,7 +6,7 @@
 /*   By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/18 17:28:00 by frfrey       #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 16:47:17 by frfrey      ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 18:24:36 by frfrey      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,6 +16,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <string.h>
 
 int		main(void)
 {
@@ -99,5 +100,19 @@ int		main(void)
 	printf("ft_strcmp = %d ", ft_strcmp("qwerty\0uiop\n", "qwerty\0uiop\n"));
 	printf("strcmp = %d\n", strcmp("qwerty\0uiop\n", "qwerty\0uiop\n"));
 	printf("%20%--done--%%\n\n");
+
+	printf("%20%--strcpy--%%\n");
+	printf("ft_strcpy = %s  :  Salut", ft_strcpy(buffer, "Salut"));
+	printf("\n-------------------\n");
+	printf("ft_strcpy = %s  :  \0", ft_strcpy(buffer, ""));
+	printf("\n-------------------\n");
+	printf("ft_strcpy = %s  :  qwertyuiop\n", ft_strcpy(buffer, "qwertyuiop"));
+	printf("\n-------------------\n");
+	printf("ft_strcpy = %s  :  qwerty\n", ft_strcpy(buffer, "qwerty"));
+	printf("\n-------------------\n");
+	printf("ft_strcpy = %s  :  987\n", ft_strcpy(buffer, "987"));
+	printf("\n-------------------\n");
+	printf("ft_strcpy = %s  :  qwerty\0", ft_strcpy(buffer, "qwerty\0uiop"));
+	printf("\n%20%--done--%%\n\n");
 	return (0);
 }
