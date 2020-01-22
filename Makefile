@@ -6,7 +6,7 @@
 #    By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2020/01/14 14:47:39 by frfrey       #+#   ##    ##    #+#        #
-#    Updated: 2020/01/22 11:35:06 by frfrey      ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/22 14:59:43 by frfrey      ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -28,7 +28,7 @@ SRCS_NAME	=	ft_strlen.s ft_write.s ft_read.s ft_strcmp.s ft_strcpy.s \
 
 SRC_BONUS	=	bonus
 
-SRCS_BONUS	=	\
+SRCS_BONUS	=	ft_atoi_base.s \
 
 SRCS 		= 	$(addprefix $(SRC_PATH)/,$(SRCS_NAME))
 
@@ -36,7 +36,7 @@ SRCB 		= 	$(addprefix $(SRC_BONUS)/,$(SRCS_BONUS))
 
 OBJS		= 	${SRCS:.s=.o}
 
-OBJSBONUS	=	${BONUS:.s=.o}
+OBJSBONUS	=	${SRCB:.s=.o}
 
 NAME		= 	libasm.a
 
@@ -60,7 +60,8 @@ $(NAME):	$(OBJS)
 			@ar rcs $(NAME) $(OBJS)
 
 bonus:		$(OBJSBONUS) $(OBJS)
-			ar rcs $(NAME) $(OBJSBONUS) $(OBJS)
+			@echo "\x1b[36m\n[OK] \033[0m \x1b[35m Compiling the bonus\033[0m"
+			@ar rcs $(NAME) $(OBJSBONUS) $(OBJS)
 
 clean:
 			@echo "\x1b[36m[OK] \033[0m \x1b[31m Removing File object\033[0m"

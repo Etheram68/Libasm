@@ -6,7 +6,7 @@
 #    By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2020/01/22 10:57:37 by frfrey       #+#   ##    ##    #+#        #
-#    Updated: 2020/01/22 11:56:13 by frfrey      ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/22 15:34:25 by frfrey      ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -41,7 +41,6 @@ _ft_strdup_copy:
 						call	_ft_strcpy				; send all to function strcpy
 						cmp		rax, 0					; chaine malloc != of NULL
 						jnz		end						; if != null jump to end
-
 
 _error:
 						xor		rax, rax				; value of return == 0
