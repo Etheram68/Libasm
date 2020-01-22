@@ -6,13 +6,14 @@
 /*   By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/18 17:28:00 by frfrey       #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/22 11:50:27 by frfrey      ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/22 11:54:00 by frfrey      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "includes/libasm.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -139,6 +140,9 @@ int		main(void)
 	test = ft_strdup("qwerty\0uiop");
 	printf("ft_strdup = %s  :  qwerty\n", test);
 	free(test);
+	printf("\n-------------------\n");
+	test = ft_strdup(NULL);
+	printf("ft_strdup = %s  :  (null))\n", test);
 	printf("\n%20%--done--%%\n\n");
 	return (0);
 }

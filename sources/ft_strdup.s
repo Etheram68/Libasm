@@ -6,7 +6,7 @@
 #    By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2020/01/22 10:57:37 by frfrey       #+#   ##    ##    #+#        #
-#    Updated: 2020/01/22 11:47:26 by frfrey      ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/22 11:56:13 by frfrey      ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -30,7 +30,7 @@ _ft_strdup_malloc:
 						inc 	rcx						; i++
 						push	rdi						; save rdi
 						mov		rdi, rcx				; rdi == i
-						call	_malloc					; rdi = malloc(rdi)
+						call	_malloc					; rdi = malloc(rcx)
 						pop		rdi						; restor rdi
 						cmp		rax, 0					; rax != NULL
 						jz		_error					; rax == NULL jump _error
