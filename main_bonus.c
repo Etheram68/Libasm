@@ -6,7 +6,7 @@
 /*   By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/22 14:49:18 by frfrey       #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/23 16:04:26 by frfrey      ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/23 16:47:21 by frfrey      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,7 +21,7 @@ int			main(void)
 	printf("\n-------------------\n");
 	printf("ft_atoi_base = %d  :  125\n", ft_atoi_base(" \n\t\r17", "abcdef0123456789"));
 	printf("\n-------------------\n");
-	printf("ft_atoi_base = %d  :  135\n", ft_atoi_base("  \n\t\r   -135", "0123456789"));
+	printf("ft_atoi_base = %d  :  -135\n", ft_atoi_base("  \n\t\r   -135", "0123456789"));
 	printf("\n-------------------\n");
 	printf("ft_atoi_base = %d  :  255 \n", ft_atoi_base(" \n\t\r\v\f \\\\\\\\\\\\\\\\", "0\\"));
 	printf("\n-------------------\n");
