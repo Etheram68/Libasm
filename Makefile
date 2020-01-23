@@ -6,7 +6,7 @@
 #    By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2020/01/14 14:47:39 by frfrey       #+#   ##    ##    #+#        #
-#    Updated: 2020/01/22 18:17:24 by frfrey      ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/23 17:56:00 by frfrey      ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -28,7 +28,8 @@ SRCS_NAME	=	ft_strlen.s ft_write.s ft_read.s ft_strcmp.s ft_strcpy.s \
 
 SRC_BONUS	=	bonus
 
-SRCS_BONUS	=	ft_atoi_base.s \
+SRCS_BONUS	=	ft_atoi_base_bonus.s ft_list_push_front_bonus.s \
+				ft_list_size_bonus.s \
 
 SRCS 		= 	$(addprefix $(SRC_PATH)/,$(SRCS_NAME))
 
