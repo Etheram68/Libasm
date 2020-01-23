@@ -6,7 +6,7 @@
 /*   By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/22 14:49:18 by frfrey       #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/23 15:48:52 by frfrey      ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/23 16:04:26 by frfrey      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -34,6 +34,23 @@ int			main(void)
 	printf("ft_atoi_base = %d  :  (0)Err\n", ft_atoi_base("145", "1234567+89"));
 	printf("\n-------------------\n");
 	printf("ft_atoi_base = %d  :  (0)Err\n", ft_atoi_base("145", "0123-450789"));
+	printf("\n-------------------\n");
+	printf("ft_atoi_base = %d : (0)Err\n", ft_atoi_base(NULL, "0123456789"));
+	printf("\n-------------------\n");
+	printf("ft_atoi_base = %d : (0)Err\n", ft_atoi_base(" -+--2147448", NULL));
+	printf("\n-------------------\n");
+	printf("ft_atoi_base = %d : -2147448\n", ft_atoi_base(" -+--2147448", "0123456789"));
+	printf("\n-------------------\n");
+	printf("ft_atoi_base = %d : -26\n", ft_atoi_base("    ++---222", "012"));
+	printf("\n-------------------\n");
+	printf("ft_atoi_base = %d : -63\n", ft_atoi_base(" -333f", "0123"));
+	printf("\n-------------------\n");
+	printf("ft_atoi_base = %d : 4\n", ft_atoi_base("04f4", "01234"));
+	printf("\n-------------------\n");
+	printf("ft_atoi_base = %d : -35\n", ft_atoi_base("-55+5", "012345"));
+	printf("\n-------------------\n");
+	printf("ft_atoi_base = %d : 2381\n", ft_atoi_base("6641-6", "0123456"));
+	printf("\n-------------------\n");
 	printf("\n%20%--done--%%\n\n");
 	return (0);
 }
