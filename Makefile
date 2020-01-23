@@ -6,7 +6,7 @@
 #    By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2020/01/14 14:47:39 by frfrey       #+#   ##    ##    #+#        #
-#    Updated: 2020/01/22 14:59:43 by frfrey      ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/22 18:17:24 by frfrey      ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -65,7 +65,7 @@ bonus:		$(OBJSBONUS) $(OBJS)
 
 clean:
 			@echo "\x1b[36m[OK] \033[0m \x1b[31m Removing File object\033[0m"
-			@$(RM) $(OBJS)
+			@$(RM) $(OBJS) $(OBJSBONUS)
 
 fclean:		clean
 			@echo "\x1b[36m[OK] \033[0m \x1b[31m Removing All\033[0m"
