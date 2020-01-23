@@ -6,7 +6,7 @@
 #    By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2020/01/22 14:32:56 by frfrey       #+#   ##    ##    #+#        #
-#    Updated: 2020/01/23 15:41:03 by frfrey      ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/23 15:54:15 by frfrey      ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -93,39 +93,38 @@ ft_atoi_str_inc_neg:
 								jmp		ft_atoi_whitspace		; jump ft_atoi_whitspace
 
 ft_atoi_init_rax:
-								xor		rax, rax
+								xor		rax, rax				; value return = 0
 
 ft_atoi_conv_init:
-								xor		rcx, rcx
-								mov		r10b, [rdi]
+								xor		rcx, rcx				; i = 0
+								mov		r10b, [rdi]				; move in r10b *str
 
 ft_atoi_conv:
-								cmp		r10b, [rsi + rcx]
-								je		ft_atoi_calc
-								cmp		BYTE[rsi + rcx], 0
-								je		_ft_init_return
-								cmp		BYTE[rdi], 0
-								je		_ft_init_return
+								cmp		r10b, [rsi + rcx]		; r10b == base[i] ?
+								je		ft_atoi_calc			; r10b = base[i] jmp ft_atoi_calc
+								cmp		BYTE[rsi + rcx], 0		; base[i] == '\0' ?
+								je		_ft_init_return			; base[i] = '\0' jmp _ft_init_return
+								cmp		BYTE[rdi], 0			; *str == '\0' ?
+								je		_ft_init_return			; *str = '\0' jmp _ft_init_return
 
 ft_atoi_conv_inc:
-								inc		rcx
-								jmp		ft_atoi_conv
+								inc		rcx						; i++
+								jmp		ft_atoi_conv			; jump ft_atoi_conv
 
 ft_atoi_calc:
-								imul	rax, r9
-								;sub		rcx, 1
-								add		rax, rcx
-								cmp		BYTE[rdi], 0
-								je		_ft_init_return
-								inc		rdi
-								jmp		ft_atoi_conv_init
+								imul	rax, r9					; ret = ret * base_len
+								add		rax, rcx				; ret += i
+								cmp		BYTE[rdi], 0			; *str == '\0' ?
+								je		_ft_init_return			; *str = '\0' jmp _ft_init_return
+								inc		rdi						; *str++
+								jmp		ft_atoi_conv_init		; jmp ft_atoi_conv_init
 
 _ft_init_return:
-								imul	rax, r8
-								jmp		end
+								imul	rax, r8					; ret = ret * is_neg
+								jmp		end						; jmp end
 
 _error_pop:
-								pop		rsi
+								pop		rsi						; restore rsi
 
 _error:
 								xor 	rax, rax				; value of return = 0
