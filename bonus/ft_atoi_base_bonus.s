@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                           LE - /             #
 #                                                               /              #
-#    ft_atoi_base.s                                   .::    .:/ .      .::    #
+#    ft_atoi_base_bonus.s                             .::    .:/ .      .::    #
 #                                                  +:+:+   +:    +:  +:+:+     #
 #    By: frfrey <frfrey@student.le-101.fr>          +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2020/01/22 14:32:56 by frfrey       #+#   ##    ##    #+#        #
-#    Updated: 2020/01/23 15:54:15 by frfrey      ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/29 11:38:51 by frfrey      ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -112,7 +112,7 @@ ft_atoi_conv_inc:
 								jmp		ft_atoi_conv			; jump ft_atoi_conv
 
 ft_atoi_calc:
-								imul	rax, r9					; ret = ret * base_len
+								mul		r9					; ret = ret * base_len
 								add		rax, rcx				; ret += i
 								cmp		BYTE[rdi], 0			; *str == '\0' ?
 								je		_ft_init_return			; *str = '\0' jmp _ft_init_return
@@ -120,7 +120,7 @@ ft_atoi_calc:
 								jmp		ft_atoi_conv_init		; jmp ft_atoi_conv_init
 
 _ft_init_return:
-								imul	rax, r8					; ret = ret * is_neg
+								mul		r8					; ret = ret * is_neg
 								jmp		end						; jmp end
 
 _error_pop:

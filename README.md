@@ -73,7 +73,9 @@ and		DEST, REG	; DEST = DEST & REG
 xor		-			; DEST = DEST ^ REG
 xor		REG, REG	; = mov	REG, 0
 mul		REG			; REG = REG * RAX
+imul	REG1, REG2	; REG1 = REG1 * REG2
 div		REG			; REG = REG / RAX
+idiv	REG1, REG2	; REG1 = REG1 / REG2
 
 ; Dereferenced value
 		[REG]		; = *REG
